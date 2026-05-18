@@ -1,1 +1,799 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NU CGPA Calculator | জাতীয় বিশ্ববিদ্যালয় সিজিপিএ ক্যালকুলেটর ২০২৪-২০২৫</title>
+  <meta name="description" content="জাতীয় বিশ্ববিদ্যালয় (National University) অনার্স ১ম, ২য়, ৩য় ও ৪র্থ বর্ষের CGPA ক্যালকুলেটর। সহজেই আপনার GPA ও CGPA বের করুন। NU grading system অনুযায়ী সম্পূর্ণ নির্ভুল।" />
+  <meta name="keywords" content="NU CGPA Calculator, জাতীয় বিশ্ববিদ্যালয় সিজিপিএ, National University CGPA, NU GPA Calculator, nu cgpa 2024, nu honours cgpa calculator, nu result calculator, জাতীয় বিশ্ববিদ্যালয় রেজাল্ট" />
+  <meta name="author" content="NU CGPA Calculator" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://nu-cgpa-calculator.com/" />
 
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="NU CGPA Calculator | জাতীয় বিশ্ববিদ্যালয় সিজিপিএ ক্যালকুলেটর" />
+  <meta property="og:description" content="অনার্স ১ম থেকে ৪র্থ বর্ষের CGPA সহজে বের করুন। National University grading system অনুযায়ী সম্পূর্ণ নির্ভুল ক্যালকুলেটর।" />
+  <meta property="og:url" content="https://nu-cgpa-calculator.com/" />
+  <meta property="og:locale" content="bn_BD" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="NU CGPA Calculator | জাতীয় বিশ্ববিদ্যালয় সিজিপিএ ক্যালকুলেটর" />
+  <meta name="twitter:description" content="অনার্স ১ম থেকে ৪র্থ বর্ষের CGPA সহজে বের করুন। সম্পূর্ণ বিনামূল্যে।" />
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "NU CGPA Calculator",
+    "alternateName": "জাতীয় বিশ্ববিদ্যালয় সিজিপিএ ক্যালকুলেটর",
+    "url": "https://nu-cgpa-calculator.com/",
+    "description": "National University Bangladesh Honours CGPA Calculator for 1st, 2nd, 3rd and 4th year students",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "BDT" },
+    "audience": { "@type": "EducationalAudience", "educationalRole": "student" },
+    "inLanguage": ["bn", "en"],
+    "provider": {
+      "@type": "Organization",
+      "name": "National University Bangladesh",
+      "url": "https://www.nu.ac.bd"
+    }
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "জাতীয় বিশ্ববিদ্যালয়ে CGPA কীভাবে হিসাব করা হয়?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "CGPA = Σ(গ্রেড পয়েন্ট × ক্রেডিট আওয়ার) ÷ মোট ক্রেডিট আওয়ার। প্রতিটি বিষয়ের গ্রেড পয়েন্টকে তার ক্রেডিটের সাথে গুণ করে যোগ করতে হবে, তারপর মোট ক্রেডিট দিয়ে ভাগ করলে CGPA পাওয়া যাবে।"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "NU তে ফার্স্ট ক্লাস পেতে কত CGPA লাগে?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "জাতীয় বিশ্ববিদ্যালয়ে CGPA ৩.৫০ থেকে ৪.০০ হলে First Class, ২.৭৫ থেকে ৩.৪৯ হলে Second Class, ২.২৫ থেকে ২.৭৪ হলে Third Class।"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root {
+      --green: #006a4e;
+      --green-light: #00875f;
+      --green-pale: #e8f5f0;
+      --red: #f42a41;
+      --gold: #f5a623;
+      --dark: #0f1f1a;
+      --card: #ffffff;
+      --border: #d0e8df;
+      --text: #1a3329;
+      --muted: #5a7a6e;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: 'Hind Siliguri', 'Noto Sans Bengali', sans-serif;
+      background: #f0f7f4;
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    /* ─── Hero ─── */
+    .hero {
+      background: linear-gradient(135deg, #004d38 0%, #006a4e 50%, #008a62 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 300px; height: 300px;
+      background: rgba(244,42,65,.15);
+      border-radius: 50%;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; left: -40px;
+      width: 220px; height: 220px;
+      background: rgba(255,255,255,.06);
+      border-radius: 50%;
+    }
+
+    /* ─── Tabs ─── */
+    .tab-btn {
+      transition: all .2s ease;
+      border-bottom: 3px solid transparent;
+    }
+    .tab-btn.active {
+      border-bottom-color: var(--green);
+      color: var(--green);
+      font-weight: 700;
+    }
+
+    /* ─── Year Panel ─── */
+    .year-panel { display: none; }
+    .year-panel.active { display: block; }
+
+    /* ─── Grade Select ─── */
+    .grade-select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M6 8L0 0h12z' fill='%23006a4e'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+      padding-right: 30px;
+      cursor: pointer;
+    }
+
+    /* ─── Grade Badges ─── */
+    .badge-ap  { background:#006a4e; color:#fff; }
+    .badge-a   { background:#00875f; color:#fff; }
+    .badge-am  { background:#26a67a; color:#fff; }
+    .badge-bp  { background:#3498db; color:#fff; }
+    .badge-b   { background:#2980b9; color:#fff; }
+    .badge-bm  { background:#f39c12; color:#fff; }
+    .badge-cp  { background:#e67e22; color:#fff; }
+    .badge-c   { background:#e74c3c; color:#fff; }
+    .badge-d   { background:#c0392b; color:#fff; }
+    .badge-f   { background:#7f8c8d; color:#fff; }
+
+    /* ─── CGPA Meter ─── */
+    .meter-track {
+      background: #dce8e4;
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    .meter-fill {
+      height: 22px;
+      border-radius: 999px;
+      transition: width 0.6s cubic-bezier(.4,0,.2,1), background 0.4s ease;
+      background: linear-gradient(90deg, #006a4e, #00c488);
+    }
+
+    /* ─── Result Card ─── */
+    .result-glow {
+      box-shadow: 0 0 40px rgba(0,106,78,.15);
+    }
+
+    /* ─── Pulse animation for result ─── */
+    @keyframes pop-in {
+      from { transform: scale(.92); opacity:0; }
+      to   { transform: scale(1);   opacity:1; }
+    }
+    .pop-in { animation: pop-in .35s ease; }
+
+    /* ─── Scrollbar ─── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #e8f5f0; }
+    ::-webkit-scrollbar-thumb { background: #006a4e; border-radius: 3px; }
+
+    /* ─── Print ─── */
+    @media print {
+      .no-print { display: none !important; }
+      body { background: #fff; }
+      .hero { background: #006a4e !important; }
+    }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 640px) {
+      .subject-row { flex-direction: column; gap: 8px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ════════════════ HEADER / HERO ════════════════ -->
+<header class="hero text-white py-10 px-4" role="banner">
+  <div class="max-w-4xl mx-auto text-center relative z-10">
+    <div class="flex items-center justify-center gap-3 mb-3">
+      <div class="w-10 h-10 rounded-full bg-red-500 flex items-center justify-center text-white text-lg font-bold shadow-lg">NU</div>
+      <span class="text-sm font-medium bg-white/15 px-3 py-1 rounded-full">National University Bangladesh</span>
+    </div>
+    <h1 class="text-3xl md:text-5xl font-bold mb-3 leading-tight">
+      জাতীয় বিশ্ববিদ্যালয়<br/>
+      <span class="text-green-300">সিজিপিএ ক্যালকুলেটর</span>
+    </h1>
+    <p class="text-green-100 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
+      অনার্স ১ম বর্ষ থেকে ৪র্থ বর্ষ পর্যন্ত প্রতিটি বিষয়ের গ্রেড ও ক্রেডিট দিয়ে<br class="hidden md:block"/>
+      আপনার <strong>GPA</strong> ও <strong>CGPA</strong> তাৎক্ষণিকভাবে বের করুন।
+    </p>
+    <div class="mt-5 flex flex-wrap gap-2 justify-center text-xs">
+      <span class="bg-white/20 px-3 py-1 rounded-full">✅ সম্পূর্ণ বিনামূল্যে</span>
+      <span class="bg-white/20 px-3 py-1 rounded-full">✅ NU গ্রেডিং অনুযায়ী</span>
+      <span class="bg-white/20 px-3 py-1 rounded-full">✅ ১০০% নির্ভুল</span>
+      <span class="bg-white/20 px-3 py-1 rounded-full">✅ ৪ বছর একসাথে</span>
+    </div>
+  </div>
+</header>
+
+<!-- ════════════════ GRADING REFERENCE ════════════════ -->
+<section class="max-w-4xl mx-auto mt-6 px-4" aria-label="গ্রেডিং স্কেল">
+  <details class="bg-white rounded-2xl shadow-sm border border-green-100 overflow-hidden no-print">
+    <summary class="cursor-pointer px-5 py-4 font-semibold text-green-800 flex items-center gap-2 select-none hover:bg-green-50 transition">
+      <span>📊</span> NU গ্রেডিং স্কেল দেখুন (ক্লিক করুন)
+    </summary>
+    <div class="overflow-x-auto px-5 pb-5">
+      <table class="w-full text-sm text-center border-collapse" role="table" aria-label="National University grading scale">
+        <thead>
+          <tr class="bg-green-700 text-white">
+            <th class="py-2 px-3 rounded-tl-lg">লেটার গ্রেড</th>
+            <th class="py-2 px-3">গ্রেড পয়েন্ট</th>
+            <th class="py-2 px-3">মার্কস রেঞ্জ</th>
+            <th class="py-2 px-3 rounded-tr-lg">ক্লাস</th>
+          </tr>
+        </thead>
+        <tbody id="gradeTable"></tbody>
+      </table>
+      <p class="mt-3 text-xs text-gray-500">* সূত্র: National University Bangladesh (www.nu.ac.bd) অফিসিয়াল গ্রেডিং পদ্ধতি অনুযায়ী।</p>
+    </div>
+  </details>
+</section>
+
+<!-- ════════════════ CALCULATOR MAIN ════════════════ -->
+<main class="max-w-4xl mx-auto mt-6 px-4 pb-12" id="main-calculator">
+
+  <!-- Year Tabs -->
+  <nav class="bg-white rounded-2xl shadow-sm border border-green-100 overflow-hidden" aria-label="বর্ষ নির্বাচন">
+    <div class="flex overflow-x-auto scrollbar-hide" role="tablist">
+      <button class="tab-btn active flex-1 min-w-[90px] py-4 text-sm font-semibold text-gray-600 hover:text-green-700 transition" 
+        onclick="switchYear(0)" role="tab" aria-selected="true" aria-controls="year-0" id="tab-0">
+        ১ম বর্ষ
+      </button>
+      <button class="tab-btn flex-1 min-w-[90px] py-4 text-sm font-semibold text-gray-600 hover:text-green-700 transition" 
+        onclick="switchYear(1)" role="tab" aria-selected="false" aria-controls="year-1" id="tab-1">
+        ২য় বর্ষ
+      </button>
+      <button class="tab-btn flex-1 min-w-[90px] py-4 text-sm font-semibold text-gray-600 hover:text-green-700 transition" 
+        onclick="switchYear(2)" role="tab" aria-selected="false" aria-controls="year-2" id="tab-2">
+        ৩য় বর্ষ
+      </button>
+      <button class="tab-btn flex-1 min-w-[90px] py-4 text-sm font-semibold text-gray-600 hover:text-green-700 transition" 
+        onclick="switchYear(3)" role="tab" aria-selected="false" aria-controls="year-3" id="tab-3">
+        ৪র্থ বর্ষ
+      </button>
+    </div>
+  </nav>
+
+  <!-- Year Panels -->
+  <div class="mt-4 space-y-4">
+    <!-- Year 0 (1st) -->
+    <div class="year-panel active bg-white rounded-2xl shadow-sm border border-green-100 p-5" id="year-0" role="tabpanel" aria-labelledby="tab-0">
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="font-bold text-green-800 text-lg">📚 ১ম বর্ষ — বিষয় সমূহ</h2>
+        <div class="text-right">
+          <span class="text-xs text-gray-500">বর্ষ GPA</span>
+          <div class="font-bold text-xl text-green-700" id="gpa-0">—</div>
+        </div>
+      </div>
+      <div class="space-y-3" id="subjects-0"></div>
+      <div class="flex flex-wrap gap-2 mt-4 no-print">
+        <button onclick="addSubject(0)" class="flex items-center gap-2 bg-green-50 hover:bg-green-100 text-green-700 font-semibold px-4 py-2 rounded-xl text-sm transition border border-green-200">
+          ➕ নতুন বিষয় যোগ করুন
+        </button>
+        <button onclick="resetYear(0)" class="flex items-center gap-2 bg-red-50 hover:bg-red-100 text-red-600 font-semibold px-4 py-2 rounded-xl text-sm transition border border-red-100">
+          🗑️ রিসেট
+        </button>
+      </div>
+    </div>
+
+    <!-- Year 1 (2nd) -->
+    <div class="year-panel bg-white rounded-2xl shadow-sm border border-green-100 p-5" id="year-1" role="tabpanel" aria-labelledby="tab-1">
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="font-bold text-green-800 text-lg">📚 ২য় বর্ষ — বিষয় সমূহ</h2>
+        <div class="text-right">
+          <span class="text-xs text-gray-500">বর্ষ GPA</span>
+          <div class="font-bold text-xl text-green-700" id="gpa-1">—</div>
+        </div>
+      </div>
+      <div class="space-y-3" id="subjects-1"></div>
+      <div class="flex flex-wrap gap-2 mt-4 no-print">
+        <button onclick="addSubject(1)" class="flex items-center gap-2 bg-green-50 hover:bg-green-100 text-green-700 font-semibold px-4 py-2 rounded-xl text-sm transition border border-green-200">
+          ➕ নতুন বিষয় যোগ করুন
+        </button>
+        <button onclick="resetYear(1)" class="flex items-center gap-2 bg-red-50 hover:bg-red-100 text-red-600 font-semibold px-4 py-2 rounded-xl text-sm transition border border-red-100">
+          🗑️ রিসেট
+        </button>
+      </div>
+    </div>
+
+    <!-- Year 2 (3rd) -->
+    <div class="year-panel bg-white rounded-2xl shadow-sm border border-green-100 p-5" id="year-2" role="tabpanel" aria-labelledby="tab-2">
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="font-bold text-green-800 text-lg">📚 ৩য় বর্ষ — বিষয় সমূহ</h2>
+        <div class="text-right">
+          <span class="text-xs text-gray-500">বর্ষ GPA</span>
+          <div class="font-bold text-xl text-green-700" id="gpa-2">—</div>
+        </div>
+      </div>
+      <div class="space-y-3" id="subjects-2"></div>
+      <div class="flex flex-wrap gap-2 mt-4 no-print">
+        <button onclick="addSubject(2)" class="flex items-center gap-2 bg-green-50 hover:bg-green-100 text-green-700 font-semibold px-4 py-2 rounded-xl text-sm transition border border-green-200">
+          ➕ নতুন বিষয় যোগ করুন
+        </button>
+        <button onclick="resetYear(2)" class="flex items-center gap-2 bg-red-50 hover:bg-red-100 text-red-600 font-semibold px-4 py-2 rounded-xl text-sm transition border border-red-100">
+          🗑️ রিসেট
+        </button>
+      </div>
+    </div>
+
+    <!-- Year 3 (4th) -->
+    <div class="year-panel bg-white rounded-2xl shadow-sm border border-green-100 p-5" id="year-3" role="tabpanel" aria-labelledby="tab-3">
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="font-bold text-green-800 text-lg">📚 ৪র্থ বর্ষ — বিষয় সমূহ</h2>
+        <div class="text-right">
+          <span class="text-xs text-gray-500">বর্ষ GPA</span>
+          <div class="font-bold text-xl text-green-700" id="gpa-3">—</div>
+        </div>
+      </div>
+      <div class="space-y-3" id="subjects-3"></div>
+      <div class="flex flex-wrap gap-2 mt-4 no-print">
+        <button onclick="addSubject(3)" class="flex items-center gap-2 bg-green-50 hover:bg-green-100 text-green-700 font-semibold px-4 py-2 rounded-xl text-sm transition border border-green-200">
+          ➕ নতুন বিষয় যোগ করুন
+        </button>
+        <button onclick="resetYear(3)" class="flex items-center gap-2 bg-red-50 hover:bg-red-100 text-red-600 font-semibold px-4 py-2 rounded-xl text-sm transition border border-red-100">
+          🗑️ রিসেট
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ ACTION BUTTONS ═══ -->
+  <div class="mt-6 flex flex-wrap gap-3 justify-center no-print">
+    <button onclick="calculateAll()" 
+      class="bg-green-700 hover:bg-green-800 active:scale-95 text-white font-bold px-8 py-3.5 rounded-xl text-base shadow-lg shadow-green-200 transition-all">
+      🎓 CGPA হিসাব করুন
+    </button>
+    <button onclick="resetAll()" 
+      class="bg-white hover:bg-red-50 active:scale-95 text-red-600 font-bold px-6 py-3.5 rounded-xl text-base shadow border border-red-200 transition-all">
+      🔄 সব রিসেট করুন
+    </button>
+    <button onclick="window.print()" 
+      class="bg-white hover:bg-blue-50 active:scale-95 text-blue-700 font-bold px-6 py-3.5 rounded-xl text-base shadow border border-blue-200 transition-all">
+      🖨️ প্রিন্ট করুন
+    </button>
+  </div>
+
+  <!-- ═══ RESULT CARD ═══ -->
+  <div id="result-card" class="mt-6 hidden">
+    <div class="bg-white rounded-2xl shadow-lg border border-green-200 overflow-hidden result-glow pop-in">
+
+      <!-- Top bar -->
+      <div class="bg-gradient-to-r from-green-700 to-green-600 px-6 py-4 text-white">
+        <div class="flex items-center justify-between flex-wrap gap-2">
+          <div>
+            <p class="text-green-200 text-sm">জাতীয় বিশ্ববিদ্যালয়</p>
+            <h3 class="text-xl font-bold">আপনার ফলাফল</h3>
+          </div>
+          <div class="text-right">
+            <p class="text-green-200 text-xs">তারিখ: <span id="result-date"></span></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CGPA Big Display -->
+      <div class="px-6 py-6 text-center border-b border-green-100">
+        <p class="text-gray-500 text-sm mb-1">সামগ্রিক CGPA (৪.০০ স্কেলে)</p>
+        <div class="text-6xl md:text-7xl font-extrabold text-green-700" id="result-cgpa">—</div>
+        <div class="mt-2">
+          <span class="text-lg font-bold px-4 py-1 rounded-full" id="result-class">—</span>
+        </div>
+      </div>
+
+      <!-- CGPA Meter -->
+      <div class="px-6 py-4 border-b border-green-50">
+        <div class="flex justify-between text-xs text-gray-400 mb-1">
+          <span>০.০০</span><span>১.০০</span><span>২.০০</span><span>৩.০০</span><span>৪.০০</span>
+        </div>
+        <div class="meter-track h-5">
+          <div class="meter-fill" id="meter-fill" style="width:0%"></div>
+        </div>
+      </div>
+
+      <!-- Year-wise GPA -->
+      <div class="px-6 py-5">
+        <h4 class="font-bold text-green-800 mb-3 text-sm uppercase tracking-wide">বর্ষ ভিত্তিক GPA</h4>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3" id="year-breakdown"></div>
+      </div>
+
+      <!-- Stats row -->
+      <div class="bg-green-50 px-6 py-4 grid grid-cols-3 gap-3 text-center text-sm">
+        <div>
+          <div class="font-bold text-green-700 text-lg" id="stat-credits">—</div>
+          <div class="text-gray-500 text-xs">মোট ক্রেডিট</div>
+        </div>
+        <div>
+          <div class="font-bold text-green-700 text-lg" id="stat-points">—</div>
+          <div class="text-gray-500 text-xs">মোট পয়েন্ট</div>
+        </div>
+        <div>
+          <div class="font-bold text-green-700 text-lg" id="stat-subjects">—</div>
+          <div class="text-gray-500 text-xs">মোট বিষয়</div>
+        </div>
+      </div>
+
+      <!-- Classification guide -->
+      <div class="px-6 py-4 border-t border-green-100">
+        <h4 class="font-bold text-green-800 mb-3 text-sm">📋 NU শ্রেণিবিভাগ</h4>
+        <div class="grid grid-cols-2 gap-2 text-xs" id="class-guide"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ═══ HOW TO USE ═══ -->
+  <section class="mt-10 bg-white rounded-2xl border border-green-100 shadow-sm p-6 no-print" aria-label="কীভাবে ব্যবহার করবেন">
+    <h2 class="font-bold text-green-800 text-xl mb-4">📖 কীভাবে ব্যবহার করবেন?</h2>
+    <ol class="space-y-3 text-gray-700 text-sm">
+      <li class="flex gap-3"><span class="flex-shrink-0 w-7 h-7 bg-green-700 text-white rounded-full flex items-center justify-center font-bold text-xs">১</span><span>উপরে <strong>১ম বর্ষ</strong> ট্যাবে ক্লিক করুন। প্রতিটি বিষয়ের <strong>বিষয়ের নাম</strong>, <strong>গ্রেড</strong> (A+, A, B+ ইত্যাদি) ও <strong>ক্রেডিট</strong> দিন।</span></li>
+      <li class="flex gap-3"><span class="flex-shrink-0 w-7 h-7 bg-green-700 text-white rounded-full flex items-center justify-center font-bold text-xs">২</span><span>বিষয় বেশি থাকলে <strong>"নতুন বিষয় যোগ করুন"</strong> বাটনে ক্লিক করুন। সাধারণত প্রতি বিষয় ৪ ক্রেডিট হয়।</span></li>
+      <li class="flex gap-3"><span class="flex-shrink-0 w-7 h-7 bg-green-700 text-white rounded-full flex items-center justify-center font-bold text-xs">৩</span><span>একইভাবে <strong>২য়, ৩য় ও ৪র্থ বর্ষের</strong> তথ্য দিন। শুধু একটি বর্ষের GPA দেখতে চাইলে শুধু সেই বর্ষ পূরণ করুন।</span></li>
+      <li class="flex gap-3"><span class="flex-shrink-0 w-7 h-7 bg-green-700 text-white rounded-full flex items-center justify-center font-bold text-xs">৪</span><span><strong>"CGPA হিসাব করুন"</strong> বাটনে ক্লিক করুন এবং তাৎক্ষণিক ফলাফল দেখুন।</span></li>
+    </ol>
+  </section>
+
+  <!-- ═══ FAQ ═══ -->
+  <section class="mt-6 space-y-3 no-print" aria-label="সাধারণ প্রশ্নোত্তর">
+    <h2 class="font-bold text-green-800 text-xl px-1">❓ সাধারণ প্রশ্নোত্তর (FAQ)</h2>
+
+    <details class="bg-white rounded-xl border border-green-100 shadow-sm">
+      <summary class="cursor-pointer px-5 py-4 font-semibold text-gray-800 hover:text-green-700 transition select-none">
+        CGPA সূত্র কী?
+      </summary>
+      <div class="px-5 pb-4 text-gray-600 text-sm leading-relaxed">
+        <strong>CGPA = Σ(গ্রেড পয়েন্ট × ক্রেডিট) ÷ মোট ক্রেডিট</strong><br/>
+        উদাহরণ: যদি আপনি ৪ ক্রেডিটের বিষয়ে B+ (৩.২৫) পান, তাহলে Quality Point = ৩.২৫ × ৪ = ১৩.০০।
+        সব বিষয়ের Quality Point যোগ করে মোট ক্রেডিট দিয়ে ভাগ করলে CGPA পাওয়া যাবে।
+      </div>
+    </details>
+
+    <details class="bg-white rounded-xl border border-green-100 shadow-sm">
+      <summary class="cursor-pointer px-5 py-4 font-semibold text-gray-800 hover:text-green-700 transition select-none">
+        NU তে First Class, Second Class কত CGPA থেকে?
+      </summary>
+      <div class="px-5 pb-4 text-gray-600 text-sm leading-relaxed">
+        <ul class="space-y-1">
+          <li>🟢 <strong>First Class:</strong> CGPA ৩.৫০ – ৪.০০</li>
+          <li>🔵 <strong>Second Class:</strong> CGPA ২.৭৫ – ৩.৪৯</li>
+          <li>🟡 <strong>Third Class:</strong> CGPA ২.২৫ – ২.৭৪</li>
+          <li>🟠 <strong>Pass:</strong> CGPA ২.০০ – ২.২৪</li>
+          <li>🔴 <strong>Fail:</strong> CGPA ২.০০ এর নিচে</li>
+        </ul>
+      </div>
+    </details>
+
+    <details class="bg-white rounded-xl border border-green-100 shadow-sm">
+      <summary class="cursor-pointer px-5 py-4 font-semibold text-gray-800 hover:text-green-700 transition select-none">
+        ক্রেডিট কীভাবে জানব?
+      </summary>
+      <div class="px-5 pb-4 text-gray-600 text-sm leading-relaxed">
+        ক্রেডিট আওয়ার আপনার সিলেবাস বা রেজাল্ট শিটে উল্লেখ থাকে। সাধারণত NU তে Major বিষয় ৪ ক্রেডিট, 
+        Subsidiary/Optional বিষয় ২-৩ ক্রেডিট। নিশ্চিত না হলে কলেজের একাডেমিক অফিস থেকে জেনে নিন।
+      </div>
+    </details>
+
+    <details class="bg-white rounded-xl border border-green-100 shadow-sm">
+      <summary class="cursor-pointer px-5 py-4 font-semibold text-gray-800 hover:text-green-700 transition select-none">
+        F গ্রেড পেলে কি CGPA তে যোগ হয়?
+      </summary>
+      <div class="px-5 pb-4 text-gray-600 text-sm leading-relaxed">
+        হ্যাঁ, F গ্রেডের মান ০.০০। এটি ক্রেডিট সহ CGPA গণনায় অন্তর্ভুক্ত হয়, তাই CGPA কমিয়ে দেয়। 
+        পুনরায় পরীক্ষা দিয়ে উত্তীর্ণ হলে নতুন গ্রেড পুরানো F এর জায়গায় বসে।
+      </div>
+    </details>
+  </section>
+
+</main>
+
+<!-- ════════════════ FOOTER ════════════════ -->
+<footer class="bg-green-800 text-green-200 text-center py-6 px-4 mt-8 text-sm no-print">
+  <p class="font-semibold text-white mb-1">জাতীয় বিশ্ববিদ্যালয় CGPA ক্যালকুলেটর</p>
+  <p>National University Bangladesh অফিসিয়াল গ্রেডিং পদ্ধতি অনুযায়ী তৈরি।</p>
+  <p class="mt-2 text-green-400 text-xs">
+    NU Official Website: 
+    <a href="https://www.nu.ac.bd" target="_blank" rel="noopener noreferrer" class="underline hover:text-white">www.nu.ac.bd</a>
+  </p>
+</footer>
+
+<!-- ════════════════ JAVASCRIPT ════════════════ -->
+<script>
+  /* ═══════════════ DATA ═══════════════ */
+  const GRADES = [
+    { label: 'A+',  point: 4.00, marks: '৮০-১০০', cls: 'First Class',  badge: 'badge-ap' },
+    { label: 'A',   point: 3.75, marks: '৭৫-৭৯',  cls: 'First Class',  badge: 'badge-a'  },
+    { label: 'A-',  point: 3.50, marks: '৭০-৭৪',  cls: 'First Class',  badge: 'badge-am' },
+    { label: 'B+',  point: 3.25, marks: '৬৫-৬৯',  cls: 'Second Class', badge: 'badge-bp' },
+    { label: 'B',   point: 3.00, marks: '৬০-৬৪',  cls: 'Second Class', badge: 'badge-b'  },
+    { label: 'B-',  point: 2.75, marks: '৫৫-৫৯',  cls: 'Second Class', badge: 'badge-bm' },
+    { label: 'C+',  point: 2.50, marks: '৫০-৫৪',  cls: 'Third Class',  badge: 'badge-cp' },
+    { label: 'C',   point: 2.25, marks: '৪৫-৪৯',  cls: 'Third Class',  badge: 'badge-c'  },
+    { label: 'D',   point: 2.00, marks: '৪০-৪৪',  cls: 'Pass',         badge: 'badge-d'  },
+    { label: 'F',   point: 0.00, marks: '০-৩৯',   cls: 'Fail',         badge: 'badge-f'  },
+  ];
+
+  const YEAR_NAMES = ['১ম বর্ষ', '২য় বর্ষ', '৩য় বর্ষ', '৪র্থ বর্ষ'];
+
+  const CLASS_GUIDE = [
+    { range: '৩.৫০ – ৪.০০', label: 'প্রথম শ্রেণি (First Class)',   color: 'text-green-700 bg-green-50 border-green-200' },
+    { range: '২.৭৫ – ৩.৪৯', label: 'দ্বিতীয় শ্রেণি (Second Class)', color: 'text-blue-700 bg-blue-50 border-blue-200' },
+    { range: '২.২৫ – ২.৭৪', label: 'তৃতীয় শ্রেণি (Third Class)',   color: 'text-yellow-700 bg-yellow-50 border-yellow-200' },
+    { range: '২.০০ – ২.২৪', label: 'পাস (Pass)',                     color: 'text-orange-700 bg-orange-50 border-orange-200' },
+    { range: '০.০০ – ১.৯৯', label: 'অকৃতকার্য (Fail)',              color: 'text-red-700 bg-red-50 border-red-200' },
+  ];
+
+  /* ═══════════════ STATE ═══════════════ */
+  // subjectCounts[year] = next subject id
+  let subjectCounts = [0, 0, 0, 0];
+
+  /* ═══════════════ INIT ═══════════════ */
+  function init() {
+    buildGradeTable();
+    buildClassGuide();
+    // Default 6 subjects per year
+    [0, 1, 2, 3].forEach(y => {
+      for (let i = 0; i < 6; i++) addSubject(y);
+    });
+  }
+
+  function buildGradeTable() {
+    const tbody = document.getElementById('gradeTable');
+    const classColors = {
+      'First Class': '#006a4e', 'Second Class': '#2980b9',
+      'Third Class': '#f39c12', 'Pass': '#e67e22', 'Fail': '#c0392b'
+    };
+    tbody.innerHTML = GRADES.map((g, i) => `
+      <tr class="${i%2===0 ? 'bg-white' : 'bg-green-50'}">
+        <td class="py-2 px-3 font-bold" style="color:${classColors[g.cls]}">${g.label}</td>
+        <td class="py-2 px-3 font-semibold text-gray-700">${g.point.toFixed(2)}</td>
+        <td class="py-2 px-3 text-gray-600">${g.marks}</td>
+        <td class="py-2 px-3 text-xs font-medium" style="color:${classColors[g.cls]}">${g.cls}</td>
+      </tr>`).join('');
+  }
+
+  function buildClassGuide() {
+    const guide = document.getElementById('class-guide');
+    guide.innerHTML = CLASS_GUIDE.map(c => `
+      <div class="border rounded-lg px-3 py-2 ${c.color}">
+        <div class="font-bold text-xs">${c.range}</div>
+        <div class="text-xs mt-0.5">${c.label}</div>
+      </div>`).join('');
+  }
+
+  /* ═══════════════ SUBJECT ROW ═══════════════ */
+  function gradeOptions(selected = '') {
+    return GRADES.map(g => 
+      `<option value="${g.point}" ${selected == g.point ? 'selected' : ''}>${g.label} (${g.point.toFixed(2)})</option>`
+    ).join('');
+  }
+
+  function addSubject(year) {
+    const id = subjectCounts[year]++;
+    const container = document.getElementById(`subjects-${year}`);
+    const div = document.createElement('div');
+    div.className = 'subject-row flex gap-2 items-center';
+    div.id = `row-${year}-${id}`;
+    div.innerHTML = `
+      <div class="flex-1 min-w-0">
+        <input type="text" 
+          placeholder="বিষয়ের নাম (যেমন: বাংলা)"
+          class="w-full border border-gray-200 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-green-300 focus:border-green-400 transition"
+          aria-label="বিষয়ের নাম" />
+      </div>
+      <div class="w-36 flex-shrink-0">
+        <select class="grade-select w-full border border-gray-200 rounded-xl px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-green-300 focus:border-green-400 transition bg-white"
+          aria-label="গ্রেড নির্বাচন" onchange="recalcYear(${year})">
+          <option value="">— গ্রেড —</option>
+          ${gradeOptions()}
+        </select>
+      </div>
+      <div class="w-20 flex-shrink-0">
+        <input type="number" min="1" max="6" step="0.5" value="4" 
+          class="w-full border border-gray-200 rounded-xl px-3 py-2.5 text-sm text-center focus:outline-none focus:ring-2 focus:ring-green-300 focus:border-green-400 transition"
+          aria-label="ক্রেডিট" onchange="recalcYear(${year})" oninput="recalcYear(${year})" />
+      </div>
+      <button onclick="removeSubject(${year}, ${id})" 
+        class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-lg text-red-400 hover:bg-red-50 hover:text-red-600 transition text-lg"
+        aria-label="বিষয় মুছুন">×</button>`;
+    container.appendChild(div);
+
+    // Column headers on first add
+    if (id === 0) {
+      const header = document.createElement('div');
+      header.className = 'flex gap-2 text-xs text-gray-400 font-medium mb-1 px-1';
+      header.innerHTML = `<div class="flex-1">বিষয়ের নাম</div><div class="w-36 flex-shrink-0">গ্রেড</div><div class="w-20 flex-shrink-0 text-center">ক্রেডিট</div><div class="w-8"></div>`;
+      container.insertBefore(header, container.firstChild);
+    }
+  }
+
+  function removeSubject(year, id) {
+    const row = document.getElementById(`row-${year}-${id}`);
+    if (row) row.remove();
+    recalcYear(year);
+  }
+
+  function resetYear(year) {
+    const container = document.getElementById(`subjects-${year}`);
+    container.innerHTML = '';
+    subjectCounts[year] = 0;
+    for (let i = 0; i < 6; i++) addSubject(year);
+    document.getElementById(`gpa-${year}`).textContent = '—';
+    hideResult();
+  }
+
+  function resetAll() {
+    [0,1,2,3].forEach(y => resetYear(y));
+    hideResult();
+  }
+
+  /* ═══════════════ CALC YEAR ═══════════════ */
+  function getYearData(year) {
+    const container = document.getElementById(`subjects-${year}`);
+    const rows = container.querySelectorAll('.subject-row');
+    let totalPoints = 0, totalCredits = 0, subjectCount = 0;
+    rows.forEach(row => {
+      const grade = parseFloat(row.querySelector('select').value);
+      const credit = parseFloat(row.querySelector('input[type="number"]').value);
+      if (!isNaN(grade) && !isNaN(credit) && credit > 0) {
+        totalPoints += grade * credit;
+        totalCredits += credit;
+        subjectCount++;
+      }
+    });
+    const gpa = totalCredits > 0 ? totalPoints / totalCredits : null;
+    return { gpa, totalPoints, totalCredits, subjectCount };
+  }
+
+  function recalcYear(year) {
+    const { gpa } = getYearData(year);
+    const el = document.getElementById(`gpa-${year}`);
+    el.textContent = gpa !== null ? gpa.toFixed(2) : '—';
+    el.style.color = gpa !== null ? getGpaColor(gpa) : '#5a7a6e';
+  }
+
+  /* ═══════════════ CALCULATE ALL ═══════════════ */
+  function calculateAll() {
+    let totalPoints = 0, totalCredits = 0, totalSubjects = 0;
+    const yearGpas = [];
+
+    [0,1,2,3].forEach(y => {
+      const data = getYearData(y);
+      yearGpas.push(data);
+      if (data.totalCredits > 0) {
+        totalPoints += data.totalPoints;
+        totalCredits += data.totalCredits;
+        totalSubjects += data.subjectCount;
+      }
+    });
+
+    if (totalCredits === 0) {
+      alert('অনুগ্রহ করে কমপক্ষে একটি বিষয়ের গ্রেড ও ক্রেডিট দিন।');
+      return;
+    }
+
+    const cgpa = totalPoints / totalCredits;
+    showResult(cgpa, yearGpas, totalCredits, totalPoints, totalSubjects);
+  }
+
+  function showResult(cgpa, yearGpas, totalCredits, totalPoints, totalSubjects) {
+    const card = document.getElementById('result-card');
+    card.classList.remove('hidden');
+    card.classList.add('pop-in');
+    setTimeout(() => card.classList.remove('pop-in'), 400);
+
+    // CGPA display
+    document.getElementById('result-cgpa').textContent = cgpa.toFixed(2);
+    document.getElementById('result-cgpa').style.color = getGpaColor(cgpa);
+
+    // Class
+    const cls = getClass(cgpa);
+    const clsEl = document.getElementById('result-class');
+    clsEl.textContent = cls.label;
+    clsEl.className = `text-lg font-bold px-4 py-1 rounded-full ${cls.badgeCls}`;
+
+    // Meter
+    const pct = Math.min((cgpa / 4) * 100, 100);
+    document.getElementById('meter-fill').style.width = pct + '%';
+    document.getElementById('meter-fill').style.background = 
+      cgpa >= 3.5 ? 'linear-gradient(90deg,#006a4e,#00c488)' :
+      cgpa >= 2.75 ? 'linear-gradient(90deg,#2980b9,#3498db)' :
+      cgpa >= 2.25 ? 'linear-gradient(90deg,#f39c12,#f1c40f)' :
+      cgpa >= 2.0 ? 'linear-gradient(90deg,#e67e22,#e67e22)' :
+      'linear-gradient(90deg,#c0392b,#e74c3c)';
+
+    // Stats
+    document.getElementById('stat-credits').textContent = totalCredits.toFixed(1);
+    document.getElementById('stat-points').textContent = totalPoints.toFixed(2);
+    document.getElementById('stat-subjects').textContent = totalSubjects;
+
+    // Date
+    document.getElementById('result-date').textContent = new Date().toLocaleDateString('bn-BD');
+
+    // Year breakdown
+    const breakdown = document.getElementById('year-breakdown');
+    breakdown.innerHTML = yearGpas.map((d, i) => {
+      if (d.totalCredits === 0) return `
+        <div class="bg-gray-50 rounded-xl p-3 text-center border border-gray-100">
+          <div class="text-xs text-gray-400 mb-1">${YEAR_NAMES[i]}</div>
+          <div class="text-lg font-bold text-gray-300">—</div>
+          <div class="text-xs text-gray-300">তথ্য নেই</div>
+        </div>`;
+      const col = getGpaColorLight(d.gpa);
+      return `
+        <div class="rounded-xl p-3 text-center border ${col.border} ${col.bg}">
+          <div class="text-xs font-medium mb-1 ${col.text}">${YEAR_NAMES[i]}</div>
+          <div class="text-2xl font-extrabold ${col.text}">${d.gpa.toFixed(2)}</div>
+          <div class="text-xs mt-0.5 ${col.text} opacity-75">${d.subjectCount} বিষয়</div>
+        </div>`;
+    }).join('');
+
+    // Scroll to result
+    card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function hideResult() {
+    document.getElementById('result-card').classList.add('hidden');
+  }
+
+  /* ═══════════════ HELPERS ═══════════════ */
+  function getClass(cgpa) {
+    if (cgpa >= 3.50) return { label: '✨ প্রথম শ্রেণি (First Class)', badgeCls: 'bg-green-100 text-green-800 border border-green-200' };
+    if (cgpa >= 2.75) return { label: '🎓 দ্বিতীয় শ্রেণি (Second Class)', badgeCls: 'bg-blue-100 text-blue-800 border border-blue-200' };
+    if (cgpa >= 2.25) return { label: '📘 তৃতীয় শ্রেণি (Third Class)', badgeCls: 'bg-yellow-100 text-yellow-800 border border-yellow-200' };
+    if (cgpa >= 2.00) return { label: '✅ পাস (Pass)', badgeCls: 'bg-orange-100 text-orange-800 border border-orange-200' };
+    return { label: '❌ অকৃতকার্য (Fail)', badgeCls: 'bg-red-100 text-red-800 border border-red-200' };
+  }
+
+  function getGpaColor(gpa) {
+    if (gpa >= 3.5) return '#006a4e';
+    if (gpa >= 2.75) return '#2980b9';
+    if (gpa >= 2.25) return '#f39c12';
+    if (gpa >= 2.0)  return '#e67e22';
+    return '#c0392b';
+  }
+
+  function getGpaColorLight(gpa) {
+    if (gpa >= 3.5)  return { bg: 'bg-green-50',  border: 'border-green-200',  text: 'text-green-700' };
+    if (gpa >= 2.75) return { bg: 'bg-blue-50',   border: 'border-blue-200',   text: 'text-blue-700' };
+    if (gpa >= 2.25) return { bg: 'bg-yellow-50', border: 'border-yellow-200', text: 'text-yellow-700' };
+    if (gpa >= 2.0)  return { bg: 'bg-orange-50', border: 'border-orange-200', text: 'text-orange-700' };
+    return { bg: 'bg-red-50', border: 'border-red-200', text: 'text-red-700' };
+  }
+
+  /* ═══════════════ TAB SWITCH ═══════════════ */
+  function switchYear(year) {
+    document.querySelectorAll('.year-panel').forEach((p, i) => {
+      p.classList.toggle('active', i === year);
+    });
+    document.querySelectorAll('.tab-btn').forEach((b, i) => {
+      b.classList.toggle('active', i === year);
+      b.setAttribute('aria-selected', i === year ? 'true' : 'false');
+    });
+  }
+
+  /* ═══════════════ START ═══════════════ */
+  init();
+</script>
+
+</body>
+</html>
